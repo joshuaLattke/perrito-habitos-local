@@ -1,0 +1,14 @@
+services:
+  robot-voz:
+    build: .
+    environment:
+      ROBOT_MODEL_CACHE: /models
+      ROBOT_VOICE_PATH: /voices/es_MX-ald-medium.onnx
+      ROBOT_CONFIG_FILE: /data/assistant_config.json
+      ROBOT_DEVICE: cpu
+    volumes:
+      - "${ROBOT_MODEL_CACHE:?Configura ROBOT_MODEL_CACHE en .env}:/models:ro"
+      - "${ROBOT_VOICE_DIR:?Configura ROBOT_VOICE_DIR en .env}:/voices:ro"
+      - "./local-data:/data"
+    ports:
+      - "127.0.0.1:8000:8000"

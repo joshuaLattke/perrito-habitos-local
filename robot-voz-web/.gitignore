@@ -1,0 +1,16 @@
+.env
+__pycache__/
+*.pyc
+*.log
+.venv/
+local-data/
+.verification/
+models/
+voices/
+*.safetensors
+*.onnx
+*.onnx.json
+*.wav
+*.zip
+.env.*
+!.env.example
